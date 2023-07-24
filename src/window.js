@@ -24,7 +24,6 @@ import Gdk from "gi://Gdk";
 import Gio from "gi://Gio";
 import Adw from "gi://Adw";
 import { POKEDEX } from "./pokedex.js";
-// console.log(POKEDEX);
 
 const Item = GObject.registerClass(
   {
@@ -42,12 +41,19 @@ const Item = GObject.registerClass(
       avatar.size = 56;
       this.add_prefix(avatar);
 
-      // console.log(Gio.File.new_for_path("/com/jkominovic/pokedex/").get_path());
+      // I need to set avatar images from the resource file
+      // I don't know how to do it
+      // I tried this:
+
       // const texture = Gdk.Texture.new_from_resource(
       //   "/com/jkominovic/pokedex/data/icons/hires/001.png"
       // );
 
       // avatar_image.set_custom_image(texture);
+
+      // Pokemon sprites are located in data/icons/hires but I couldn't find a way to access them
+      // I tried several things but I couldn't find a way to do it
+      // I guess I'm missing some build configuration or something
     }
   }
 );
